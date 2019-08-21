@@ -41,7 +41,7 @@ static libkdump_config_t config;
 #endif
 
 #ifdef __x86_64__
-
+/* Meltdown Gadgets */
 // ---------------------------------------------------------------------------
 #define meltdown                                                               \
   asm volatile("1:\n"                                                          \
@@ -108,7 +108,7 @@ static libkdump_config_t config;
                : "c"(phys), "b"(mem)                                           \
                : "eax");
 #endif
-
+/* END Meltdown Gadgets */
 #ifndef MELTDOWN
 #define MELTDOWN meltdown_nonull
 #endif
